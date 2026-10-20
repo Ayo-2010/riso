@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riso Club — a cut-and-paste zine press</title>
+<meta name="description" content="Make a small photocopied zine: choose a cover title, ink pairing, layout and page count, edit the pages, preview and print.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f0e3'/%3E%3Ccircle cx='13' cy='16' r='9' fill='%23ff2d7e'/%3E%3Ccircle cx='20' cy='16' r='9' fill='%230646ff' opacity='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#stage">Skip to the zine</a>
+
+<header class="topbar">
+  <div class="topline">
+    <span>Issue 01</span>
+    <span>Photocopied in a kitchen</span>
+    <span>Price: free / steal it</span>
+  </div>
+  <div class="masthead">
+    <div class="masthead-logo">
+      <h1>RISO<span>CLUB</span></h1>
+      <p>a zine press for cut-and-paste people</p>
+    </div>
+    <div class="masthead-note">
+      <p>Make a small magazine. Two inks, one photocopier, no permission asked.</p>
+      <span class="stamp" aria-hidden="true">HOT<br>OFF<br>THE<br>PRESS</span>
+    </div>
+  </div>
+</header>
+
+<main class="bench">
+  <aside class="controls" aria-labelledby="controls-title">
+    <div class="controls-head">
+      <p class="tag">Press settings</p>
+      <h2 id="controls-title">MAKE<br>A ZINE</h2>
+      <span class="controls-edition">FORM R-01</span>
+    </div>
+
+    <div class="field">
+      <label for="cover-title"><span>01</span> Cover title</label>
+      <input id="cover-title" type="text" value="RISO CLUB" maxlength="34" autocomplete="off" spellcheck="false">
+    </div>
+
+    <div class="field">
+      <label for="cover-subtitle"><span>02</span> Subtitle</label>
+      <input id="cover-subtitle" type="text" value="a zine about small things, badly photocopied" maxlength="72" autocomplete="off">
+    </div>
+
+    <fieldset class="control-block">
+      <legend><span>03</span> Composition</legend>
+      <div class="template-grid" id="template-grid">
+        <button type="button" class="template-button" data-template="cut" aria-pressed="true">
+          <svg viewBox="0 0 64 48" aria-hidden="true"><rect width="64" height="48" fill="#f4f0e3"/><rect x="6" y="7" width="30" height="8" fill="#0646ff"/><rect x="6" y="19" width="42" height="5" fill="#ff2d7e"/><rect x="38" y="28" width="20" height="14" fill="#ff2d7e" opacity=".75"/><rect x="6" y="30" width="26" height="12" fill="#0646ff" opacity=".75"/></svg>
+          <span>Cut &amp; paste</span>
+        </button>
+        <button type="button" class="template-button" data-template="halo" aria-pressed="false">
+          <svg viewBox="0 0 64 48" aria-hidden="true"><rect width="64" height="48" fill="#f4f0e3"/><circle cx="32" cy="21" r="14" fill="#ff2d7e" opacity=".65"/><circle cx="32" cy="21" r="8" fill="none" stroke="#0646ff" stroke-width="2"/><rect x="14" y="39" width="36" height="3" fill="#0646ff"/></svg>
+          <span>Halftone halo</span>
+        </button>
+        <button type="button" class="template-button" data-template="columns" aria-pressed="false">
+          <svg viewBox="0 0 64 48" aria-hidden="true"><rect width="64" height="48" fill="#f4f0e3"/><rect x="5" y="7" width="54" height="7" fill="#ff2d7e"/><rect x="5" y="20" width="15" height="20" fill="#0646ff" opacity=".6"/><rect x="24" y="20" width="15" height="20" fill="#0646ff" opacity=".6"/><rect x="43" y="20" width="15" height="20" fill="#0646ff" opacity=".6"/></svg>
+          <span>Column riot</span>
+        </button>
+        <button type="button" class="template-button" data-template="big" aria-pressed="false">
+          <svg viewBox="0 0 64 48" aria-hidden="true"><rect width="64" height="48" fill="#f4f0e3"/><text x="4" y="29" font-family="Arial Black, sans-serif" font-size="27" fill="#0646ff">A</text><text x="24" y="29" font-family="Arial Black, sans-serif" font-size="27" fill="#ff2d7e" opacity=".8">A</text><rect x="6" y="35" width="48" height="8" fill="#ff2d7e" opacity=".7"/></svg>
+          <span>Big type</span>
+        </button>
+      </div>
+    </fieldset>
+
+    <fieldset class="control-block">
+      <legend><span>04</span> Ink pairing</legend>
+      <div class="ink-grid" id="ink-grid">
+        <button type="button" class="ink-button is-active" data-ink="pinkblue" aria-pressed="true">
+          <span class="ink-blobs" aria-hidden="true"><i class="blob-pink"></i><i class="blob-blue"></i></span>
+          <span><strong>Pink over blue</strong><small>loud &amp; friendly</small></span>
+        </button>
+        <button type="button" class="ink-button" data-ink="bluepink" aria-pressed="false">
+          <span class="ink-blobs" aria-hidden="true"><i class="blob-blue"></i><i class="blob-pink"></i></span>
+          <span><strong>Blue over pink</strong><small>cool &amp; peculiar</small></span>
+        </button>
+        <button type="button" class="ink-button" data-ink="pink" aria-pressed="false">
+          <span class="ink-blobs" aria-hidden="true"><i class="blob-pink"></i></span>
+          <span><strong>Pink only</strong><small>one drum, all heart</small></span>
+        </button>
+        <button type="button" class="ink-button" data-ink="blue" aria-pressed="false">
+          <span class="ink-blobs" aria-hidden="true"><i class="blob-blue"></i></span>
+          <span><strong>Blue only</strong><small>quietly electric</small></span>
+        </button>
+      </div>
+    </fieldset>
+
+    <div class="control-block range-block">
+      <label for="page-count"><span>05</span> Pages <output id="pages-value" for="page-count">08</output></label>
+      <input id="page-count" type="range" min="4" max="12" step="2" value="8">
+      <div class="range-scale" aria-hidden="true"><span>4</span><span>8</span><span>12</span></div>
+    </div>
+
+    <div class="control-block range-block">
+      <label for="misregistration"><span>06</span> Misregistration <output id="mis-value" for="misregistration">3 px</output></label>
+      <input id="misregistration" type="range" min="0" max="8" step="1" value="3">
+      <div class="range-scale" aria-hidden="true"><span>sharp</span><span>sloppy</span></div>
+    </div>
+
+    <div class="press-actions">
+      <button type="button" class="button-line" id="preview">Print preview</button>
+      <button type="button" class="button-ink" id="print">Print zine</button>
+    </div>
+
+    <p class="controls-note"><span aria-hidden="true">✎</span> Tap any heading or paragraph on the page to rewrite it. Your edits stay in this browser.</p>
+  </aside>
+
+  <section class="workbench" aria-labelledby="workbench-title">
+    <h2 class="sr-only" id="workbench-title">Zine preview</h2>
+    <div class="page-toolbar">
+      <div class="page-nav">
+        <button type="button" id="prev-page" aria-label="Previous page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <p id="page-label">Cover · 01 / 08</p>
+        <button type="button" id="next-page" aria-label="Next page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+      </div>
+      <p class="page-hint">← → to flip · all edits saved</p>
+    </div>
+
+    <div class="zine-stage" id="stage">
+      <div class="stage-grid" aria-hidden="true"></div>
+      <div class="page-shell" id="page-shell">
+        <span class="crop crop-tl" aria-hidden="true"></span>
+        <span class="crop crop-tr" aria-hidden="true"></span>
+        <span class="crop crop-bl" aria-hidden="true"></span>
+        <span class="crop crop-br" aria-hidden="true"></span>
+        <span class="staple staple-top" aria-hidden="true"></span>
+        <span class="staple staple-bottom" aria-hidden="true"></span>
+        <div id="page-mount"></div>
+      </div>
+    </div>
+
+    <div class="thumbs-wrap">
+      <div class="thumbs-head">
+        <p>The pages</p>
+        <p>Click to flip</p>
+      </div>
+      <div class="thumb-strip" id="thumb-strip" role="group" aria-label="Zine pages"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Riso Club · issue 01 · printed not published</p>
+  <p>Two inks, one browser, no account.</p>
+  <p>Fold here <span aria-hidden="true">✂</span> keep going</p>
+</footer>
+
+<div class="preview-overlay" id="preview-overlay" hidden>
+  <div class="preview-head">
+    <div>
+      <p class="tag">Print preview</p>
+      <h2>ALL PAGES, FLAT</h2>
+    </div>
+    <div class="preview-actions">
+      <button type="button" class="button-line" id="preview-close">Close</button>
+      <button type="button" class="button-ink" id="preview-print">Print zine</button>
+    </div>
+  </div>
+  <div class="preview-pages" id="preview-pages"></div>
+  <p class="preview-note">Each page prints on its own A4 sheet at A5 size, crop marks and staples included. Fold, stack, staple twice on the left. Give it away.</p>
+</div>
+
+<div class="print-root" id="print-root" aria-hidden="true"></div>
+
+<p class="sr-only" id="status" role="status" aria-live="polite"></p>
+
+<script src="app.js"></script>
+</body>
+</html>
